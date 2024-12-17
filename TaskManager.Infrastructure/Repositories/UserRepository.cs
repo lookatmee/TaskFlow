@@ -17,12 +17,14 @@ namespace TaskManager.Infrastructure.Repositories
         {
             return await _context.Users
                 .Include(u => u.AssignedWorkItems)
+                .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public async Task<ApplicationUser?> GetByEmailAsync(string email)
         {
             return await _context.Users
+                .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.Email == email);
         }
 

@@ -8,5 +8,6 @@ public record WorkItemDto(
     string Description,
     WorkItemStatus Status,
     int? AssignedUserId,
+    string? AssignedUserName,
     DateTime CreatedAt,
     DateTime? UpdatedAt); 
